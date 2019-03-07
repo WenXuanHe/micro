@@ -1,0 +1,1 @@
+cat out/*-config.json | awk 'BEGIN{str="{\n"}{str = str"\n    "substr($0,2,length($0)-2)","}END{str=substr(str,1,length(str)-1)"\n}";print str}' > out/config.json
